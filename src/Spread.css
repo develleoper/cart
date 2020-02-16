@@ -1,29 +1,60 @@
 body {
   background: #2b2a30;
   color: white;
+  font-size: 2.5vmin;
 }
+ol.spread {
+  display: grid;
+  grid-template-areas: "deck";
+  margin: 0.25em;
+  padding: 0;
+  justify-items: center;
+}
+ol.spread.three {
+  grid-auto-flow: column;
+}
+ol.spread.cross {
+  grid-template-areas:
+    "deck .   four .    "
+    ".    two one  three"
+    ".    .   five .    ";
+  grid-template-columns: auto 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 0.25em;
+}
+ol.spread.cross li.dealt:nth-of-type(2) { grid-area: one; }
+ol.spread.cross li.dealt:nth-of-type(3) { grid-area: two; }
+ol.spread.cross li.dealt:nth-of-type(4) { grid-area: three; }
+ol.spread.cross li.dealt:nth-of-type(5) { grid-area: four; }
+ol.spread.cross li.dealt:nth-of-type(6) { grid-area: five; }
 li {
-  display: inline-block;
+  display: inline-flex;
+  flex: 0 0 auto;
+  box-sizing: border-box;
   height: 10.5em;
   width: 6em;
-  border: 1px solid black;
-  margin: 0.25em;
-  border-radius: 0.25em;
-  box-sizing: border-box;
-}
-li.deck {
   padding: 0;
-}
-li:not(.deck) {
-  padding: 0.375em 0.25em;
+  border: 1px solid black;
+  border-radius: 0.375em;
   background: white;
+  overflow: hidden;
+}
+li:not(.back) {
+  padding: 0.375em 0.25em;
+}
+li.back {
+  z-index: 2;
 }
 li img {
-  object-fit: cover;
   height: 100%;
   width: 100%;
-  background: black;
   box-sizing: border-box;
+}
+li:not(.back) img {
+  background: black;
   border: 1px solid #333;
   border-radius: 0.125em;
+}
+li:not(.dealt) {
+  grid-area: deck;
 }

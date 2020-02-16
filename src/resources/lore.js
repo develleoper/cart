@@ -22,3 +22,10 @@ export const CARDS = [
   { name: `Judgement`, unicode: `🃴`, image: `/media/RWS_Tarot_20_Judgement.jpg`, },
   { name: `The World`, unicode: `🃵`, image: `/media/RWS_Tarot_21_World.jpg`, },
 ]
+
+export const SPREADS = {
+  one: 1,
+  three: 3,
+  five: 5,
+  cross: 5,
+}
