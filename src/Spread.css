@@ -77,3 +77,16 @@ ol.spread.cross {
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 0.25em;
 }
+
+ol.spread.celtic-cross {
+  font-size: 2vmin;
+  grid-template-areas:
+    "deck . . . j"
+    ".    . e . i"
+    ".    c a d h"
+    ".    . f . g";
+  grid-template-columns: auto 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 0.25em;
+}
+ol.spread.celtic-cross > li.dealt:nth-child(3) { grid-area: a; transform: rotate(270deg); }

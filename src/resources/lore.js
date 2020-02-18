@@ -30,4 +30,5 @@ export const SPREADS = {
   standard: 3,
   five: 5,
   cross: 5,
+  'celtic-cross': 10,
 }

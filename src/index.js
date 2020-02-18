@@ -12,7 +12,7 @@ const IndexPage = () =>
     <Link to="/spread/daily">Daily</Link>
     <Link to="/spread/standard">Standard</Link>
     <Link to="/spread/cross">Cross</Link>
-  </Page>
+      <Link to="/spread/celtic-cross">Celtic Cross</Link>
 
 const App = () =>
   <AppContext.Provider value={useState(AppContext)}>
