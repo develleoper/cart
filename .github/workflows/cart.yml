@@ -29,5 +29,5 @@ jobs:
     - uses: actions/checkout@v2
     - uses: peaceiris/actions-gh-pages@v2
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: build
