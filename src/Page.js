@@ -1,13 +1,9 @@
 import React from 'react'
 
-function App(props) {
-  const { children, title } = props
-  return (
-    <>
-      <header>{title}</header>
-      <main>{children}</main>
-    </>
-  )
-}
+const App = ({ children, header, ...props }) =>
+  <>
+    <header {...props}>{header}</header>
+    <main {...props}>{children}</main>
+  </>
 
 export default App

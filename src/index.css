@@ -9,7 +9,44 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  monospace;
+}
+
+html, body, #app {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+}
+
+#app {
+  font-size: 2.5vmin;
+  color: white;
+  background-color: black;
+}
+
+#app > header {
+  flex: 0 0 auto;
+  padding: 0 1em;
+}
+#app > header > h1 {
+  float: left;
+  font-size: 1.2em;
+  text-transform: capitalize;
+}
+#app > header > menu {
+  float: right;
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 1em;
+}
+#app > header.spread > h1::after {
+  content: " Spread";
+}
+#app > main {
+  flex: 1 1 0;
+  padding: 0 1em;
+  background-image: repeating-linear-gradient(215deg, rgba(79,215,175, 0.5), rgba(175,215,79, 0.5) 1px, transparent 0px, transparent 2px);
+  background-size: 101px;
 }
 
 a {

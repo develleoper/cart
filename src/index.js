@@ -8,11 +8,15 @@ import SpreadRoute from './Spread';
 export const AppContext = createContext({})
 
 const IndexPage = () =>
-  <Page>
-    <Link to="/spread/daily">Daily</Link>
-    <Link to="/spread/standard">Standard</Link>
-    <Link to="/spread/cross">Cross</Link>
+  <Page header={<>
+    <h1>Cart: A Shitty Tarot App</h1>
+    <menu>
+      <Link to="/spread/daily">Daily</Link>
+      <Link to="/spread/standard">Standard</Link>
+      <Link to="/spread/cross">Cross</Link>
       <Link to="/spread/celtic-cross">Celtic Cross</Link>
+    </menu>
+  </>} />
 
 const App = () =>
   <AppContext.Provider value={useState(AppContext)}>

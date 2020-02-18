@@ -1,10 +1,3 @@
-body {
-  font-size: 2.5vmin;
-  color: white;
-  background-color: black;
-  background-image: repeating-linear-gradient(215deg, rgba(79,215,175, 0.5), rgba(175,215,79, 0.5) 1px, transparent 0px, transparent 2px);
-  background-size: 101px;
-}
 ol.spread {
   display: grid;
   grid-template-areas: "deck";
@@ -52,7 +45,8 @@ ol.spread > li.dealt:nth-of-type(11) { grid-area: j; }
 ol.spread.one,
 ol.spread.daily {
   grid-template-areas:
-    "deck . a .";
+    "deck . . ."
+    ".    . a .";
   grid-template-columns: auto 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-gap: 0.25em;
@@ -61,7 +55,8 @@ ol.spread.daily {
 ol.spread.three,
 ol.spread.standard {
   grid-template-areas:
-    "deck a b c";
+    "deck . . ."
+    ".    a b c";
   grid-template-columns: auto 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-gap: 0.25em;
