@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from 'react'
-import { Switch, Route } from 'react-router-dom'
-import { AppContext } from '.'
+import React, { useState, useEffect } from 'react'
+import { Switch, Route, Link } from 'react-router-dom'
+// import { AppContext } from '.'
 import Page from './Page'
 import './Spread.css'
 
@@ -18,12 +18,13 @@ export default function SpreadRoute(props) {
 
 function SpreadPage(props) {
   const { match: { params: { spreadId } } } = props
-  const [{deck = [], count = 0}, setContext] = useContext(AppContext)
-  useEffect(() => setContext(prevContext => ({ ...prevContext, deck: shuffle(CARDS) })), [setContext])
+  const [{deck = [], count = 0}, setState] = useState({})
+  useEffect(() => setState(state => ({ ...state, deck: shuffle(CARDS) })), [setState])
 
   return (
     <Page title={spreadId}>
-      <ol className={`spread ${spreadId}`} onClick={() => count < SPREADS[spreadId] && setContext(prevContext => ({ ...prevContext, count: count + 1 }))}>
+      <Link to="/">Home</Link>
+      <ol className={`spread ${spreadId}`} onClick={() => count < SPREADS[spreadId] && setState(state => ({ ...state, count: count + 1 }))}>
         <li className="back"><img src={`${process.env.PUBLIC_URL}/media/RWS_Tarot.jpg`} alt="Card Back"/></li>
         {deck.map((card, index) => <li key={card.name} className={`${count > index ? 'dealt' : '' }`}><img src={`${process.env.PUBLIC_URL}${card.image}`} alt={card.name} /></li>)}
       </ol>

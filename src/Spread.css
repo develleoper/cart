@@ -6,12 +6,10 @@ body {
 ol.spread {
   display: grid;
   grid-template-areas: "deck";
+  grid-auto-flow: column;
   margin: 0.25em;
   padding: 0;
   justify-items: center;
-}
-ol.spread.three {
-  grid-auto-flow: column;
 }
 ol.spread.cross {
   grid-template-areas:

@@ -25,7 +25,9 @@ export const CARDS = [
 
 export const SPREADS = {
   one: 1,
+  daily: 1,
   three: 3,
+  standard: 3,
   five: 5,
   cross: 5,
 }
